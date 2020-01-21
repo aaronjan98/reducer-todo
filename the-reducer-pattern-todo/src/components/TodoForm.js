@@ -4,6 +4,7 @@ import { initialState, reducer } from '../reducers/reducer';
 const TodoForm = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [todoText, setTodoText] = useState([]);
+    console.log(state);
 
     const handleChanges = e => {
         setTodoText(e.target.value);
@@ -11,10 +12,9 @@ const TodoForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        this.props.addItem(this.state.todoText);
 
-        this.setState({
-            todoText: '',
+        setTodoText({
+            item: '',
           });
     };
 
@@ -25,7 +25,7 @@ const TodoForm = () => {
             value={state.todoText}
             onChange={handleChanges}/>
 
-            <button className='add-btn' >Add</button>
+            <button className='add-btn' onClick={() => dispatch({ type: 'ADD_TODO'})}>Add</button>
         </form>
     );
 }
