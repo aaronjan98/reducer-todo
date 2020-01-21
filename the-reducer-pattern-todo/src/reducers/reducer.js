@@ -4,6 +4,19 @@ export const initialState = {
     id: 3892987589
 }
 
-export default const reducer = () => {
-    return state;
+export const reducer = (state, action) => {
+    switch (action.type) {
+        case 'ADD_TODO':
+          return {
+            ...state,
+            completed: false
+          };
+        case 'COMPLETE_TODO':
+          return {
+            ...state,
+            completed: true
+          };
+        default:
+          return state;
+      }
 }
