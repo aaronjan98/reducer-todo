@@ -23,9 +23,11 @@ const TodoForm = () => {
             <input type="text"
             name="newTodo"
             value={state.todoText}
-            onChange={handleChanges}/>
+            onChange={handleChanges}
+            onClick={() => dispatch({ type: 'ADD_TODO'})}
+            />
 
-            <button className='add-btn' onClick={() => dispatch({ type: 'ADD_TODO'})}>Add</button>
+            <button className='add-btn' onClick={() => dispatch({ type: 'ADD_TODO', payload: todoText})}>Add</button>
         </form>
     );
 }

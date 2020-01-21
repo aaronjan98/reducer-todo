@@ -9,7 +9,7 @@ export const reducer = (state, action) => {
         case 'ADD_TODO':
           return {
             ...state,
-            completed: false
+            item: action.payload
           };
         case 'COMPLETE_TODO':
           return {
