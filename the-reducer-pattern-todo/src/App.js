@@ -1,7 +1,8 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
-import TodoList from './components/TodoList';
 import './App.css';
+import './components/Todo.css';
+
 
 function App() {
 
@@ -11,7 +12,6 @@ function App() {
       <h1>Todo App using the Reducer Pattern!</h1>
       
       <TodoForm  />
-      <TodoList  />
     </div>
   );
 }
