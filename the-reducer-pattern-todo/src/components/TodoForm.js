@@ -13,9 +13,6 @@ const TodoForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // setNewTodo({
-        //     todo: ''
-        // });
     };
 
     return(
@@ -33,7 +30,7 @@ const TodoForm = () => {
             Clear Completed
             </button>
         </form>
-        <TodoList state={state}/>
+        <TodoList state={state} dispatch={dispatch}/>
         </>
     );
 }

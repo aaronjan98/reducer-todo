@@ -19,16 +19,16 @@ export const reducer = (state, action) => {
                 }
             ];
         case 'COMPLETE_TODO':
-          return [
-            state.map(item => {
-                item.completed =  true
-            })
-          ];
+         const completedState = state.map(item => {
+            if(item.id === action.payload.id){
+                item.completed = !item.completed;
+            }
+            return item;
+          })
+          return completedState;
         case 'CLEAR_TODO':
-            return [
-                ...state, 
-                state.filter(item => item.completed === true)
-            ];
+          const clearedState =  state.filter(item => item.completed === false)
+            return clearedState;
         default:
           return state;
       }
